@@ -46,6 +46,9 @@ char apiCodeBuff[50] = "";
 
 char wifiStatus[20] = "init";
 
+int hours = 0;
+int mins = 0;
+
 void setup() 
 {
   // put your setup code here, to run once:
@@ -155,9 +158,12 @@ void readDataFromThingspeak()
   if(readData(temp, hum, pressure, light, g_channelNumber, g_logApiCode))
   {
     unsigned long unixTime = ntpUnixTime(udp);
-
-    int hours = (unixTime % 86400) / 3600;
-    int mins = ((unixTime % 86400) - hours * 3600) / 60;
+        
+    if(unixTime)
+    {
+      hours = (unixTime % 86400) / 3600;
+      mins = ((unixTime % 86400) - hours * 3600) / 60;
+    }
     
     sprintf(wifiStatus, "Connection OK   %02d:%02d", hours, mins);
 
