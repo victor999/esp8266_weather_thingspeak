@@ -19,3 +19,5 @@ https://github.com/adafruit/Adafruit_BME280_Library
 https://github.com/adafruit/Adafruit_TSL2561
 
 https://github.com/tzapu/WiFiManager
+
+https://github.com/victor999/Libaries-for-ESP8266-NodeMcu/tree/master/NodeMcuFile
